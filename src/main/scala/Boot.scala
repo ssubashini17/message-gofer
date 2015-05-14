@@ -10,5 +10,5 @@ object Boot extends App with MySslConfiguration {
   val log = Logging(system, getClass)
 
   val service = system.actorOf(Props[MessengerActor], "spray-service")
-  IO(Http) ! Http.Bind(service, interface = "localhost", port = AppConfig.getHttpPort)
+  IO(Http) ! Http.Bind(service, interface = AppConfig.getHostname, port = AppConfig.getHttpPort)
 }

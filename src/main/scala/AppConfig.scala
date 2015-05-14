@@ -10,4 +10,5 @@ object AppConfig {
 	}
 
 	def getHttpPort() = HttpConfig.port
+	def getHostname() = config.getString("spray.can.server.hostname")
 }
